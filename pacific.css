@@ -44,3 +44,9 @@ footer {
     font-weight: bold;
     color: #660099;
 }
+
+#wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
