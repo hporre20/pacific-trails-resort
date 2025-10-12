@@ -4,15 +4,16 @@
 
 body {
     color: #666666;
-    background-color: #EAEAEA;
+    background-color: #90c7e3;
     font-family: Verdana, Arial, sans-serif;
+    margin: 0;
 }
 
 header {
     background-color: #002171;
     color:#FFFFFF;
     font-family: Georgia, serif;
-    height: 120px;
+    padding: 1em;
 }
 
 header a {
@@ -31,23 +32,27 @@ header a:hover {
 h1 {
     text-align: center;
     font-family:'Brush Script MT', cursive;
-    padding-top: .5em;
-    font-size: 3em;
-    letter-spacing: .25em;
+    font-size: 1.5em;
 }
 
 nav {
-    font-weight: bold;
-    padding: 0;
-    float: left;
-    width: 160px;
     font-size: 1.2em;
-    position: fixed;
+    text-align: center;
+    background-color: #FFF;
 }
 
 nav ul {
     list-style-type: none;
-    padding-left: 1em;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav li {
+    padding: .5em 1em .5em 1em;
+    width: 100%;
+    border-bottom: 1px solid;
 }
 
 nav a {
@@ -67,12 +72,8 @@ nav a:hover {
 }
 
 main {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 0 1em 0 1em;
     display: block;
-    background-color: #FFF;
-    margin-left: 170px;
-    overflow: auto;
 }
 
 h2 {
@@ -84,10 +85,8 @@ h3 {
 }
 
 section {
-    float: left;
-    width: 33%;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: .5em;
+    padding-right: .5em;
 }
 
 footer {
@@ -96,7 +95,6 @@ footer {
     text-align: center;
     padding: 1em;
     background-color: #fff;
-    margin-left: 170px;
 }
 
 .resort {
@@ -109,34 +107,86 @@ footer {
     color: #660099;
 }
 
+#mobile {
+    display: inline;
+}
+
+#desktop {
+    display: none;
+}
+
 #wrapper {
-    width: 80%;
-    min-width: 960px;
-    max-width: 2048px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #FFFFFF;
-    box-shadow: 5px 8px 8px 5px;
-    background-image: linear-gradient(to bottom, #FFFFFF, #90c7e3);
+
 }
 
 #homehero {
     height: 300px;
     background-image: url(images/coast.jpg);
-    background-size: 100% 100%;
-    margin-left: 170px;
+    background-size: 200% 100%;
 }
 
 #yurthero {
     height: 300px;
     background-image: url(images/yurt.jpg);
-    background-size: 100% 100%;
-    margin-left: 170px;
+    background-size: 200% 100%;
 }
 
 #trailhero {
     height: 300px;
     background-image: url(images/trail.jpg);
-    background-size: 100% 100%;
-    margin-left: 170px;
+    background-size: 200% 100%;
+}
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 2em;
+        letter-spacing: .25em;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    nav li {
+        width: 12em;
+        border-bottom: none;
+    }
+
+    #flow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #mobile {
+        display: none;
+    }
+
+    #desktop {
+        display: inline;
+    }
+
+    #homehero, #yurthero, #trailhero {
+        background-size: 100% 100%;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        background-image: linear-gradient(to bottom, #FFFFFF 20%, #90C7E3 60%, #FFFFFF 100%);
+    }
+
+    nav ul {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    #wrapper {
+        width: 80%;
+        margin: auto;
+    }
 }
